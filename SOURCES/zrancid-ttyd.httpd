@@ -1,0 +1,15 @@
+Redirect /zrancid/ttyd /zrancid/ttyd/
+
+<Location /zrancid/ttyd/>
+    RequestHeader set X-Remote-User expr=anonymous@%{REMOTE_ADDR}
+    RequestHeader unset Authorization
+    # do proper auth and access control or grant for testing
+    #Require all granted
+    Require all denied
+</Location>
+
+# port 9999 does not exists, it is a dummy port to workaround a bug in
+# mod_proxy_wstunnel (https://bz.apache.org/bugzilla/show_bug.cgi?id=65958)
+ProxyPass /zrancid/ttyd/ws unix:/run/zrancid-ttyd/zrancid-ttyd.sock|ws://127.0.0.1:9999/ws
+ProxyPass /zrancid/ttyd/ unix:/run/zrancid-ttyd/zrancid-ttyd.sock|http://127.0.0.1/
+ProxyPassReverse /zrancid/ttyd/ unix:/run/zrancid-ttyd/zrancid-ttyd.sock|http://127.0.0.1/

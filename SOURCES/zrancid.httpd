@@ -1,0 +1,10 @@
+ScriptAliasMatch "^/zrancid/(diff|log|show)$" "/opt/zrancid/bin/zrancid-git-$1"
+ScriptAlias /zrancid/ls /opt/zrancid/bin/zrancid-ls
+
+<LocationMatch "^/zrancid/(diff|log|ls|show)$">
+    SetEnv ZRANCID_RUNAS zrancid
+    SetEnv ZRANCID_CGI 1
+    # do proper auth and access control or grant for testing
+    #Require all granted
+    Require all denied
+</LocationMatch>

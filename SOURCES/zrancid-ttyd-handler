@@ -1,0 +1,12 @@
+#!/bin/bash
+PROGNAME=${0##*/}
+function speak() { echo "$HOSTNAME> $PROGNAME: $*"; }
+function die() { speak "$*"; exit 2; }
+logger -t "$PROGNAME" -- "TTYD_USER = ${TTYD_USER:-<unknown>}, ARGS = ${@@Q}"
+speak 'Hello!'
+speak "TTYD_USER = ${TTYD_USER:-<unknown>}"
+speak "ARGS = ${@@Q}"
+(( $# != 1 )) && die 'Invalid aguments! ($# != 1)'
+[[ -z $1 ]] && die 'Invalid aguments! (-z $1)'
+[[ -n "${1//[[:alnum:]._-]}" ]] && die 'Invalid aguments! ($1 value)'
+exec sudo -nu zrancid /opt/zrancid/bin/zrancid-login "$1"

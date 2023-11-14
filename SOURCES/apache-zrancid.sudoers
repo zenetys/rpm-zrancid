@@ -1,0 +1,8 @@
+Cmnd_Alias APACHE_ZRANCID = \
+    /opt/zrancid/bin/zrancid-ls, \
+    /opt/zrancid/bin/zrancid-git-diff, \
+    /opt/zrancid/bin/zrancid-git-log, \
+    /opt/zrancid/bin/zrancid-git-show
+Defaults!APACHE_ZRANCID env_keep += "ZRANCID_CGI QUERY_STRING"
+Defaults!APACHE_ZRANCID !pam_session
+apache ALL=(zrancid) NOPASSWD: APACHE_ZRANCID

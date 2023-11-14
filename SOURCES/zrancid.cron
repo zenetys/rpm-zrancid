@@ -1,0 +1,2 @@
+30 22 * * * zrancid /opt/zrancid/bin/zrancid-run @all 2>&1 |logger -t cron-zrancid-run -p notice
+0 4 * * * zrancid /opt/zrancid/bin/zrancid-cleanlogs 30

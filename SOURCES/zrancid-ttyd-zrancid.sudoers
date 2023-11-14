@@ -1,0 +1,3 @@
+Cmnd_Alias ZRANCID_TTYD = /opt/zrancid/bin/zrancid-login
+Defaults!ZRANCID_TTYD !pam_session
+zrancid-ttyd ALL=(zrancid) NOPASSWD: ZRANCID_TTYD
