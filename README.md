@@ -140,6 +140,7 @@ Enable the ttyd server:
 Here is a quick way of getting started using apache to serve the (z)RANCiD API and to access devices via ttyd:
 
 ```
+# dnf --setopt install_weak_deps=False install httpd mod_ssl
 # ln -s /opt/zrancid/share/zrancid.httpd.conf /etc/httpd/conf.d/60-zrancid.conf
 # ln -s /opt/zrancid/share/zrancid-ttyd.httpd.conf /etc/httpd/conf.d/60-zrancid-ttyd.conf
 # htpasswd -c -5 /etc/httpd/auth.htpasswd admin
