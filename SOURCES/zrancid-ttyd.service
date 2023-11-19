@@ -5,7 +5,7 @@ After=network.target
 
 [Service]
 Type=exec
-ExecStart=/bin/sh -c 'exec /usr/bin/ttyd -i /run/zrancid-ttyd/zrancid-ttyd.sock -u $(id -u zrancid-ttyd) -g $(id -g zrancid-ttyd) -U zrancid-ttyd:apache -W -I /usr/share/ttyd/ttyd-alt-index.html -b / -H X-USER -t disableReconnect=true -a /usr/share/zrancid-ttyd/zrancid-ttyd-handler'
+ExecStart=/bin/sh -c 'exec /usr/bin/ttyd -i /run/zrancid-ttyd/zrancid-ttyd.sock -u $(id -u zrancid-ttyd) -g $(id -g zrancid-ttyd) -U zrancid-ttyd:apache -W -I /usr/share/ttyd/ttyd-alt-index.html -b / -H X-Remote-User -t disableReconnect=true -a /usr/share/zrancid-ttyd/zrancid-ttyd-handler'
 Restart=always
 SyslogIdentifier=zrancid-ttyd
 
