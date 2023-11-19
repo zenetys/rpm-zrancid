@@ -1,6 +1,6 @@
 | Package&nbsp;name | Supported&nbsp;targets |
 | :--- | :--- |
-| zrancid | el9 |
+| zrancid | el8, el9 |
 <br/>
 
 ## Build:
@@ -11,6 +11,7 @@ environment is needed**_, with ability to pull Rocky Linux (el9) images
 from internet if not already downloaded.
 
 ```
+$ ./rpmbuild-docker -d el8
 $ ./rpmbuild-docker -d el9
 ```
 

@@ -49,7 +49,9 @@ Requires:       openssh-clients
 Requires:       sudo
 Requires:       telnet
 Requires(post): util-linux
+%if 0%{?rhel} >= 9
 Requires:       util-linux-core
+%endif
 # epel
 Requires:       perl(Hash::Merge::Simple)
 Requires(pre):  rancid
