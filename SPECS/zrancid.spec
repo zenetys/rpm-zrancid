@@ -45,6 +45,7 @@ BuildRequires: systemd
 # zrancid
 # standard
 Requires(post): git
+Requires:       jq
 Requires:       openssh-clients
 Requires:       sudo
 Requires:       telnet
