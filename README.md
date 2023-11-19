@@ -37,7 +37,7 @@ The zrancid package, as is, will most likely not work with SELinux enforcing, ma
 **Installation**
 
 ```
-# dnf install zrancid
+# dnf --setopt install_weak_deps=False install zrancid
 ```
 
 **Usage**
