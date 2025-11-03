@@ -1,6 +1,11 @@
 Redirect /zrancid/ttyd /zrancid/ttyd/
 
 <Location /zrancid/ttyd/>
+    # override reconnect overlay style
+    RequestHeader unset Accept-Encoding
+    AddOutputFilterByType SUBSTITUTE text/html
+    Substitute "s@this\.overlayNode\.style\.cssText=\"@this.overlayNode.style.cssText=\"font-family: sans-serif;@"
+
     RequestHeader set X-Remote-User expr=anonymous@%{REMOTE_ADDR}
     RequestHeader unset Authorization
     # do proper auth and access control or grant for testing
