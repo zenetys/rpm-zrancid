@@ -1,4 +1,4 @@
-# Supported targets: el9
+# Supported targets: el8, el9, el10
 
 %{!?zrancid_version: %define zrancid_version 1.0.5}
 #define zrancid_revision 1234567

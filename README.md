@@ -1,6 +1,6 @@
 | Package&nbsp;name | Supported&nbsp;targets |
 | :--- | :--- |
-| zrancid | el8, el9 |
+| zrancid | el8, el9, el10 |
 <br/>
 
 ## Build:
@@ -13,6 +13,7 @@ from internet if not already downloaded.
 ```
 $ ./rpmbuild-docker -d el8
 $ ./rpmbuild-docker -d el9
+$ ./rpmbuild-docker -d el10
 ```
 
 ## Prebuilt packages:
