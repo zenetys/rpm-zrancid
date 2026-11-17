@@ -1,6 +1,6 @@
 # Supported targets: el8, el9, el10
 
-%{!?zrancid_version: %define zrancid_version 1.0.5}
+%{!?zrancid_version: %define zrancid_version 1.0.6}
 #define zrancid_revision 1234567
 
 %define zenetys_git_source() %{lua:
